@@ -1,0 +1,25 @@
+ul {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10%;
+  font-size: 28px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  padding: 5px 15px;
+  border-radius: 12px;
+}
+
+.active {
+  border: 1px solid rgb(255, 145, 0);
+  background: linear-gradient(transparent 80%, rgb(247, 186, 107) 20%);
+}
