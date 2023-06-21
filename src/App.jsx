@@ -1,12 +1,23 @@
-import './App.css'
+// App.jsx
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Calculator from './pages/Calculator';
+import Quote from './pages/Quote';
 import Navbar from './components/Navbar';
-function App() {
 
+function App() {
   return (
-    <div className="App">
+    <Router>
       <Navbar />
-    </div>
-  )
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/calculator" element={<Calculator />} />
+        <Route path="/quote" element={<Quote />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
