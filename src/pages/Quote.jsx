@@ -1,6 +1,7 @@
+import '../styles/Quote.css';
 const Quote = () => {
   return (
-    <div>Quote</div>
+    <div className="quote-container">Quote</div>
   )
 }
 

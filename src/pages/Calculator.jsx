@@ -1,6 +1,7 @@
+import '../styles/Calculator.css';
 const Calculator = () => {
   return (
-    <div>Calculator</div>
+    <div className="calculator-container">Calculator</div>
   )
 }
 
