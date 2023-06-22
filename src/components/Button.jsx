@@ -1,8 +1,8 @@
 import '../styles/Button.css';
 
-const Button = () => {
+const Button = ( {symbol} ) => {
   return (
-    <input type="button" value="5" className='button'/>
+    <input type="button" value={symbol} className='button'/>
   )
 }
 

@@ -1,7 +1,7 @@
 import '../styles/Display.css';
-const Display = () => {
+const Display = ( {result} ) => {
   return (
-    <div className="display">0.321321321</div>
+    <div className="display">{result}</div>
   )
 }
 
