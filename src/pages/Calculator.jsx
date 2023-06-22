@@ -4,14 +4,27 @@ import Button from '../components/Button';
 import Display from '../components/Display';
 
 const Calculator = () => {
-  const [result, resetResult] = useState(0);
+  const [result, setResult] = useState(0);
+  const onClick = (event) => {
+    setResult(result + event.target.__reactProps$lhj4h571vk.value);
+  };
+
 
   return (
     <div className="calculator-container">
       <Display result={result}/>
       <div className="buttons">
         <div className="row">
-          <Button symbol="7"/>
+          <Button symbol="AC" onClick={onClick} aditionalClassName="AC"/>
+          <Button symbol="%"/>
+          <Button symbol="+/-"/>
+          <Button symbol="DEL" aditionalClassName="DEL"/>
+
+
+        </div>
+
+        <div className="row">
+          <Button symbol="7" onClick={onClick} />
           <Button symbol="8"/>
           <Button symbol="9"/>
           <Button symbol="&divide;"/>

@@ -22,3 +22,8 @@
   align-items: center;
   padding: 5px 0 0 0;
 }
+
+.AC,
+.DEL {
+  font-size: 25px !important;
+}
