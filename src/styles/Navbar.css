@@ -1,10 +1,9 @@
 ul {
-  width: 80%;
+  width: 50%;
   margin: 20px auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  column-gap: 10%;
   font-size: 28px;
 }
 
