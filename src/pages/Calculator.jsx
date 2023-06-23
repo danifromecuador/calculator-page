@@ -5,6 +5,7 @@ import Display from '../components/Display';
 
 const Calculator = () => {
   const [result, setResult] = useState('0');
+  
   const numberClickHandler = (event) => {
     if (result === '0') setResult(event.target.value);
     else setResult(result + event.target.value);
@@ -13,6 +14,11 @@ const Calculator = () => {
 
   const acFunction = () => {
     setResult('0');
+  };
+
+  const delFunction = () => {
+    if (result.length === 1) setResult('0');
+    else setResult(result.slice(0, -1));
   };
 
 
@@ -24,29 +30,29 @@ const Calculator = () => {
           <Button symbol="AC" onClick={acFunction} aditionalClassName="AC"/>
           <Button symbol="%"/>
           <Button symbol="+/-"/>
-          <Button symbol="DEL" aditionalClassName="DEL"/>
+          <Button symbol="DEL" onClick={delFunction} aditionalClassName="DEL"/>
         </div>
 
         <div className="row">
           <Button symbol="7" onClick={numberClickHandler} />
-          <Button symbol="8"/>
-          <Button symbol="9"/>
+          <Button symbol="8" onClick={numberClickHandler} />
+          <Button symbol="9" onClick={numberClickHandler} />
           <Button symbol="&divide;"/>
         </div>
         <div className="row">
-          <Button symbol="4"/>
-          <Button symbol="5"/>
-          <Button symbol="6"/>
+          <Button symbol="4" onClick={numberClickHandler} />
+          <Button symbol="5" onClick={numberClickHandler} />
+          <Button symbol="6" onClick={numberClickHandler} />
           <Button symbol="&times;"/>
         </div>
         <div className="row">
-          <Button symbol="1"/>
-          <Button symbol="2"/>
-          <Button symbol="3"/>
+          <Button symbol="1" onClick={numberClickHandler} />
+          <Button symbol="2" onClick={numberClickHandler} />
+          <Button symbol="3" onClick={numberClickHandler} />
           <Button symbol="&minus;"/>
         </div>
         <div className="row">
-          <Button symbol="0"/>
+          <Button symbol="0" onClick={numberClickHandler} />
           <Button symbol="&middot;"/>
           <Button symbol="="/>
           <Button symbol="+"/>
