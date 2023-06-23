@@ -1,4 +1,29 @@
 .calculator-container {
-  width: 50%;
+  width: 360px;
   margin: 50px auto;
+  padding: 15px;
+  border: 10px solid rgb(102, 102, 102);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0 0 0;
+}
+
+.AC,
+.DEL {
+  font-size: 25px !important;
 }

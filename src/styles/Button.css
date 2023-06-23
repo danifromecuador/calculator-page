@@ -1,0 +1,16 @@
+.button {
+  width: 74px;
+  height: 65px;
+  border: 2px solid gray;
+  border-radius: 15px;
+  font-size: 42px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(255, 145, 0);
+}
+
+.operator {
+  background-color: rgb(247, 186, 107);
+}
