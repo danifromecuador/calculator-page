@@ -65,10 +65,22 @@ const Calculator = () => {
   };
 
   const equalBtn = () => {
-    if (operation === '+') setResult((parseFloat(previousResult) + parseFloat(result)).toString());
-    if (operation === '-') setResult((parseFloat(previousResult) - parseFloat(result)).toString());
-    if (operation === '*') setResult((parseFloat(previousResult) * parseFloat(result)).toString());
-    if (operation === '/') setResult((parseFloat(previousResult) / parseFloat(result)).toString());
+    if (operation === '+') {
+      const bigResult = (parseFloat(previousResult) + parseFloat(result)).toString()
+      if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+    }
+    if (operation === '-') {
+      const bigResult = (parseFloat(previousResult) - parseFloat(result)).toString()
+      if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+    }
+    if (operation === '*') {
+      const bigResult = (parseFloat(previousResult) * parseFloat(result)).toString()
+      if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+    }
+    if (operation === '/') {
+      const bigResult = (parseFloat(previousResult) / parseFloat(result)).toString()
+      if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+    }
     if (operation === '%') setResult(((parseFloat(previousResult)/100) * parseFloat(result)).toString());
   };
 
