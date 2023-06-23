@@ -14,8 +14,14 @@ const Calculator = () => {
     console.log(result);
   };
 
+  const dotBtn = () => {
+    if (result.includes('.')) setResult(result);
+    else setResult(result + '.');
+  };
+
   const acBtn = () => {
     setResult('0');
+    setOperation('');
   };
 
   const delBtn = () => {
@@ -31,8 +37,9 @@ const Calculator = () => {
     // return previousResult + result;
   };
 
-  const equalBtn = (event) => {
-    if (operation === '+') setResult(parseFloat(previousResult) + parseFloat(result));
+  const equalBtn = () => {
+    if (operation === '+') setResult((parseFloat(previousResult) + parseFloat(result)).toString());
+    console.log(result);
   };
 
   return (
@@ -66,7 +73,7 @@ const Calculator = () => {
         </div>
         <div className="row">
           <Button symbol="0" onClick={numberBtn} />
-          <Button symbol="&middot;"/>
+          <Button symbol="&middot;" onClick={dotBtn} />
           <Button symbol="=" onClick={equalBtn}/>
           <Button symbol="+" onClick={addBtn}/>
         </div>
