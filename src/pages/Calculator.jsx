@@ -33,14 +33,33 @@ const Calculator = () => {
     setPreviousResult(result);
     setResult('0');
     setOperation('+');
-    console.log(previousResult + result);
-    // return previousResult + result;
+  };
+
+  const subtractBtn = () => {
+    setPreviousResult(result);
+    setResult('0');
+    setOperation('-');
+  };
+
+  const multiplyBtn = () => {
+    setPreviousResult(result);
+    setResult('0');
+    setOperation('*');
+  };
+
+  const divideBtn = () => {
+    setPreviousResult(result);
+    setResult('0');
+    setOperation('/');
   };
 
   const equalBtn = () => {
     if (operation === '+') setResult((parseFloat(previousResult) + parseFloat(result)).toString());
-    console.log(result);
-  };
+    else if (operation === '-') setResult((parseFloat(previousResult) - parseFloat(result)).toString());
+    else if (operation === '*') setResult((parseFloat(previousResult) * parseFloat(result)).toString());
+    else if (operation === '/') setResult((parseFloat(previousResult) / parseFloat(result)).toString());
+    
+  };  
 
   return (
     <div className="calculator-container">
@@ -57,19 +76,19 @@ const Calculator = () => {
           <Button symbol="7" onClick={numberBtn} />
           <Button symbol="8" onClick={numberBtn} />
           <Button symbol="9" onClick={numberBtn} />
-          <Button symbol="&divide;"/>
+          <Button symbol="&divide;" onClick={divideBtn}/>
         </div>
         <div className="row">
           <Button symbol="4" onClick={numberBtn} />
           <Button symbol="5" onClick={numberBtn} />
           <Button symbol="6" onClick={numberBtn} />
-          <Button symbol="&times;"/>
+          <Button symbol="&times;" onClick={multiplyBtn}/>
         </div>
         <div className="row">
           <Button symbol="1" onClick={numberBtn} />
           <Button symbol="2" onClick={numberBtn} />
           <Button symbol="3" onClick={numberBtn} />
-          <Button symbol="&minus;"/>
+          <Button symbol="&minus;" onClick={subtractBtn}/>
         </div>
         <div className="row">
           <Button symbol="0" onClick={numberBtn} />
