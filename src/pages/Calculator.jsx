@@ -5,6 +5,7 @@ import Display from '../components/Display';
 
 const Calculator = () => {
   const [result, setResult] = useState('0');
+  const [previousResult, setPreviousResult] = useState('0');
   
   const numberClickHandler = (event) => {
     if (result === '0') setResult(event.target.value);
@@ -19,6 +20,12 @@ const Calculator = () => {
   const delFunction = () => {
     if (result.length === 1) setResult('0');
     else setResult(result.slice(0, -1));
+  };
+
+  const addFunction = () => {
+    setPreviousResult(result);
+    setResult('0');
+    console.log(previousResult + result);
   };
 
 
@@ -55,7 +62,7 @@ const Calculator = () => {
           <Button symbol="0" onClick={numberClickHandler} />
           <Button symbol="&middot;"/>
           <Button symbol="="/>
-          <Button symbol="+"/>
+          <Button symbol="+" onClick={addFunction}/>
         </div>
       </div>
     </div>

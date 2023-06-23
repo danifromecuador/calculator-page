@@ -10,8 +10,8 @@ const Button = ( {symbol, onClick, aditionalClassName} ) => {
 
 Button.propTypes = {
   symbol: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  aditionalClassName: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  aditionalClassName: PropTypes.string,
 };
 
 export default Button;
