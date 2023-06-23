@@ -54,11 +54,22 @@ const Calculator = () => {
     setOperation('/');
   };
 
+  const percentBtn = () => {
+    setPreviousResult(result);
+    setResult('0');
+    setOperation('%');
+  };
+
+  const positiveNegativeBtn = () => {
+    setResult((parseFloat(result) * -1).toString());
+  };
+
   const equalBtn = () => {
     if (operation === '+') setResult((parseFloat(previousResult) + parseFloat(result)).toString());
     if (operation === '-') setResult((parseFloat(previousResult) - parseFloat(result)).toString());
     if (operation === '*') setResult((parseFloat(previousResult) * parseFloat(result)).toString());
     if (operation === '/') setResult((parseFloat(previousResult) / parseFloat(result)).toString());
+    if (operation === '%') setResult(((parseFloat(previousResult)/100) * parseFloat(result)).toString());
   };
 
   return (
@@ -67,8 +78,8 @@ const Calculator = () => {
       <div className="buttons">
         <div className="row">
           <Button symbol="AC" onClick={acBtn} aditionalClassName="AC" />
-          <Button symbol="%" />
-          <Button symbol="+/-" />
+          <Button symbol="%" onClick={percentBtn}/>
+          <Button symbol="+/-" onClick={positiveNegativeBtn}/>
           <Button symbol="DEL" onClick={delBtn} aditionalClassName="DEL" />
         </div>
 
