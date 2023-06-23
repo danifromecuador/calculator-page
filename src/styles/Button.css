@@ -6,3 +6,11 @@
   font-size: 42px;
   cursor: pointer;
 }
+
+.button:hover {
+  background-color: rgb(255, 145, 0);
+}
+
+.operator {
+  background-color: rgb(247, 186, 107);
+}

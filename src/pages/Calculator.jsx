@@ -68,18 +68,22 @@ const Calculator = () => {
     if (operation === '+') {
       const bigResult = (parseFloat(previousResult) + parseFloat(result)).toString()
       if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+      else setResult(bigResult);
     }
     if (operation === '-') {
       const bigResult = (parseFloat(previousResult) - parseFloat(result)).toString()
       if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+      else setResult(bigResult);
     }
     if (operation === '*') {
       const bigResult = (parseFloat(previousResult) * parseFloat(result)).toString()
       if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+      else setResult(bigResult);
     }
     if (operation === '/') {
       const bigResult = (parseFloat(previousResult) / parseFloat(result)).toString()
       if (bigResult.length > 8) setResult(parseFloat(bigResult).toFixed(8).toString());
+      else setResult(bigResult);
     }
     if (operation === '%') setResult(((parseFloat(previousResult)/100) * parseFloat(result)).toString());
   };
@@ -99,25 +103,25 @@ const Calculator = () => {
           <Button symbol="7" onClick={numberBtn} />
           <Button symbol="8" onClick={numberBtn} />
           <Button symbol="9" onClick={numberBtn} />
-          <Button symbol="&divide;" onClick={divideBtn} />
+          <Button symbol="&divide;" onClick={divideBtn} aditionalClassName="operator" />
         </div>
         <div className="row">
           <Button symbol="4" onClick={numberBtn} />
           <Button symbol="5" onClick={numberBtn} />
           <Button symbol="6" onClick={numberBtn} />
-          <Button symbol="&times;" onClick={multiplyBtn} />
+          <Button symbol="&times;" onClick={multiplyBtn} aditionalClassName="operator" />
         </div>
         <div className="row">
           <Button symbol="1" onClick={numberBtn} />
           <Button symbol="2" onClick={numberBtn} />
           <Button symbol="3" onClick={numberBtn} />
-          <Button symbol="&minus;" onClick={subtractBtn} />
+          <Button symbol="&minus;" onClick={subtractBtn} aditionalClassName="operator" />
         </div>
         <div className="row">
           <Button symbol="0" onClick={numberBtn} />
           <Button symbol="&middot;" onClick={dotBtn} />
           <Button symbol="=" onClick={equalBtn} />
-          <Button symbol="+" onClick={addBtn} />
+          <Button symbol="+" onClick={addBtn} aditionalClassName="operator"  />
         </div>
       </div>
     </div>
