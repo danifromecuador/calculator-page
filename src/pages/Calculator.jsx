@@ -4,9 +4,15 @@ import Button from '../components/Button';
 import Display from '../components/Display';
 
 const Calculator = () => {
-  const [result, setResult] = useState(0);
-  const onClick = (event) => {
-    setResult(result + event.target.__reactProps$lhj4h571vk.value);
+  const [result, setResult] = useState('0');
+  const numberClickHandler = (event) => {
+    if (result === '0') setResult(event.target.value);
+    else setResult(result + event.target.value);
+    console.log(result);
+  };
+
+  const acFunction = () => {
+    setResult('0');
   };
 
 
@@ -15,16 +21,14 @@ const Calculator = () => {
       <Display result={result}/>
       <div className="buttons">
         <div className="row">
-          <Button symbol="AC" onClick={onClick} aditionalClassName="AC"/>
+          <Button symbol="AC" onClick={acFunction} aditionalClassName="AC"/>
           <Button symbol="%"/>
           <Button symbol="+/-"/>
           <Button symbol="DEL" aditionalClassName="DEL"/>
-
-
         </div>
 
         <div className="row">
-          <Button symbol="7" onClick={onClick} />
+          <Button symbol="7" onClick={numberClickHandler} />
           <Button symbol="8"/>
           <Button symbol="9"/>
           <Button symbol="&divide;"/>
